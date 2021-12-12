@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="y7s-Cq-hFz">
             <objects>
-                <viewController id="CRU-Sw-XUU" customClass="ViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstview" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CRU-Sw-XUU" customClass="ViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LYi-Dd-V49">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

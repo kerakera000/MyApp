@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class ConfigurationViewController: UIViewController {
 
@@ -17,7 +19,15 @@ class ConfigurationViewController: UIViewController {
 
     
     @IBAction func logout(_ sender: Any) {
-        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+        print("ok")
+        let firebaseAuth = Auth.auth()
+        do{
+            try firebaseAuth.signOut()
+            guard let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "firstview") else { return  } 
+            self.present(tabBarController, animated: true, completion: nil)
+        }catch let error as NSError {
+            print("エラー",error)
+        }
     }
     
 }
