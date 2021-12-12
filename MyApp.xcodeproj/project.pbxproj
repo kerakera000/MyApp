@@ -24,6 +24,7 @@
 		2217A0452763AD5B00169B35 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2217A0442763AD5B00169B35 /* SearchViewController.swift */; };
 		2217A0472763AD6400169B35 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2217A0462763AD6400169B35 /* ListViewController.swift */; };
 		2217A0492764E41D00169B35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2217A0482764E41D00169B35 /* GoogleService-Info.plist */; };
+		22D365912765ED1E007EA32B /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D365902765ED1E007EA32B /* RealmModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		2217A0442763AD5B00169B35 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2217A0462763AD6400169B35 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		2217A0482764E41D00169B35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		22D365902765ED1E007EA32B /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		EC84E6739B1C3DEF5F1B7CFC /* Pods-MyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp.release.xcconfig"; path = "Target Support Files/Pods-MyApp/Pods-MyApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 		2217A0202763A98300169B35 /* MyApp */ = {
 			isa = PBXGroup;
 			children = (
+				22D3658F2765ECD7007EA32B /* Model */,
 				2217A0352763AC8400169B35 /* Controler */,
 				2217A0212763A98300169B35 /* AppDelegate.swift */,
 				2217A0232763A98300169B35 /* SceneDelegate.swift */,
@@ -110,6 +113,14 @@
 				2217A0462763AD6400169B35 /* ListViewController.swift */,
 			);
 			path = Controler;
+			sourceTree = "<group>";
+		};
+		22D3658F2765ECD7007EA32B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22D365902765ED1E007EA32B /* RealmModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		64982F41499448B4C9152BDB /* Frameworks */ = {
@@ -256,6 +267,7 @@
 				2217A0412763AD4400169B35 /* ConfigurationViewController.swift in Sources */,
 				2217A0222763A98300169B35 /* AppDelegate.swift in Sources */,
 				2217A0242763A98300169B35 /* SceneDelegate.swift in Sources */,
+				22D365912765ED1E007EA32B /* RealmModel.swift in Sources */,
 				2217A0372763ACD600169B35 /* MailsigninViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

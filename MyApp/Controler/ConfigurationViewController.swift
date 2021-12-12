@@ -15,7 +15,8 @@ class ConfigurationViewController: UIViewController {
     }
     
 
-    @IBAction func Logout(_ sender: Any) {
+    
+    @IBAction func logout(_ sender: Any) {
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
