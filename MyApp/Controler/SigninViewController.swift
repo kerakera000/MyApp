@@ -29,9 +29,14 @@ class SigninViewController: UIViewController {
        //
     }
     @IBAction func skip(_ sender: Any) {
-        let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "Tabbar") as! UITabBarController
-        tabBarController.selectedIndex = 0
-        self.present(tabBarController, animated: true, completion: nil)
+        FBAuth.signInAnonymously() { authResult, error in
+            guard let user = authResult?.user else {
+                return
+            }
+            print(user.uid)
+            print("匿名ログイン")
+            self.realmset()
+        }
     }
     @IBAction func GoogleAuth(_ sender: Any) {
         GIDSignIn.sharedInstance.signIn(with: SignInConfig, presenting: self) { user, error in
@@ -49,7 +54,7 @@ class SigninViewController: UIViewController {
                 self.FBAuth.signIn(with: credential) { (user, error) in
                     print("ログイン成功")
                     print(self.uid as Any)
-                    realmset()
+                    self.realmset()
                     sendProfileDB()
             }
             func sendProfileDB() {
@@ -61,53 +66,53 @@ class SigninViewController: UIViewController {
                 userRef.setData(docData)
             }
         }
-        func realmset(){
-            print("realmリセット")
-            try! realm.write {
-                realm.deleteAll()
+    }
+    func realmset(){
+        print("realmリセット")
+        try! realm.write {
+            realm.deleteAll()
+        }
+        
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        db.collection("newuser").document(uid).collection("memo").order(by: "postDateID").addSnapshotListener{(snapShot, error) in
+            print("なぜ出ない",snapShot as Any)
+            if error != nil{
+                print("エラー")
+                return
             }
-            
-            guard let uid = Auth.auth().currentUser?.uid else { return }
-            
-            db.collection("newuser").document(uid).collection("memo").order(by: "postDateID").addSnapshotListener{(snapShot, error) in
-                print("なぜ出ない",snapShot as Any)
-                if error != nil{
-                    print("エラー")
-                    return
-                }
-                if let snapShotDoc = snapShot?.documents{
-                    print("配列〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜＾",snapShotDoc)
-                    for doc in snapShotDoc {
-                        //配列化されたdocのdata内容だけを抽出してdataに入れる
-                        let data = doc.data()
-                        print("なぜ出ない",data)
-                        if let comments = data["comments"] as? String,
-                             let Capital = data["capital"] as? Bool,
-                                 let yearmount = data["YearMount"] as? String,
-                                     let postDateId = data["postDateID"] as? String{
-                                        
-                                        let item = Memos()
-                                            item.Comments = comments
-                                            item.PostDateID = postDateId
-                                            item.CheckBool = Capital
-                                            item.YearMount = yearmount
-                                                try! self.realm.write() {
-                                                    if self.list == nil {
-                                                        let itemList = Itemlist()
-                                                        itemList.list.append(item)
-                                                        self.realm.add(itemList)
-                                                        self.list = self.realm.objects(Itemlist.self).first?.list
-                                                    } else {
-                                                        self.list.append(item)
-                                                    }
+            if let snapShotDoc = snapShot?.documents{
+                print("配列〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜＾",snapShotDoc)
+                for doc in snapShotDoc {
+                    //配列化されたdocのdata内容だけを抽出してdataに入れる
+                    let data = doc.data()
+                    print("なぜ出ない",data)
+                    if let comments = data["comments"] as? String,
+                         let Capital = data["capital"] as? Bool,
+                             let yearmount = data["YearMount"] as? String,
+                                 let postDateId = data["postDateID"] as? String{
+                                    
+                                    let item = Memos()
+                                        item.Comments = comments
+                                        item.PostDateID = postDateId
+                                        item.CheckBool = Capital
+                                        item.YearMount = yearmount
+                                            try! self.realm.write() {
+                                                if self.list == nil {
+                                                    let itemList = Itemlist()
+                                                    itemList.list.append(item)
+                                                    self.realm.add(itemList)
+                                                    self.list = self.realm.objects(Itemlist.self).first?.list
+                                                } else {
+                                                    self.list.append(item)
                                                 }
-                        }
+                                            }
                     }
                 }
-                let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "Tabbar") as! UITabBarController
-                tabBarController.selectedIndex = 0
-                self.present(tabBarController, animated: true, completion: nil)
             }
+            let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "Tabbar") as! UITabBarController
+            tabBarController.selectedIndex = 0
+            self.present(tabBarController, animated: true, completion: nil)
         }
     }
     
