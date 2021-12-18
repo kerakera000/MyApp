@@ -26,6 +26,8 @@
 		2226C78C2768A1D400BF1B1F /* MailSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226C78B2768A1D400BF1B1F /* MailSignupViewController.swift */; };
 		2226C78E2768E56D00BF1B1F /* TemporaryRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226C78D2768E56D00BF1B1F /* TemporaryRegistrationViewController.swift */; };
 		2278CA172767A974000873CB /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278CA162767A974000873CB /* TextField.swift */; };
+		228DD2EC276DB51B00BCA862 /* SendDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228DD2EB276DB51B00BCA862 /* SendDBModel.swift */; };
+		228DD2EE276DB9E200BCA862 /* LoadDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228DD2ED276DB9E200BCA862 /* LoadDBModel.swift */; };
 		22D365912765ED1E007EA32B /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D365902765ED1E007EA32B /* RealmModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		2226C78B2768A1D400BF1B1F /* MailSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailSignupViewController.swift; sourceTree = "<group>"; };
 		2226C78D2768E56D00BF1B1F /* TemporaryRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryRegistrationViewController.swift; sourceTree = "<group>"; };
 		2278CA162767A974000873CB /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		228DD2EB276DB51B00BCA862 /* SendDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDBModel.swift; sourceTree = "<group>"; };
+		228DD2ED276DB9E200BCA862 /* LoadDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDBModel.swift; sourceTree = "<group>"; };
 		22D365902765ED1E007EA32B /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		EC84E6739B1C3DEF5F1B7CFC /* Pods-MyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp.release.xcconfig"; path = "Target Support Files/Pods-MyApp/Pods-MyApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +129,8 @@
 			children = (
 				22D365902765ED1E007EA32B /* RealmModel.swift */,
 				2278CA162767A974000873CB /* TextField.swift */,
+				228DD2EB276DB51B00BCA862 /* SendDBModel.swift */,
+				228DD2ED276DB9E200BCA862 /* LoadDBModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,6 +273,7 @@
 				2278CA172767A974000873CB /* TextField.swift in Sources */,
 				2217A0262763A98300169B35 /* ViewController.swift in Sources */,
 				2226C78E2768E56D00BF1B1F /* TemporaryRegistrationViewController.swift in Sources */,
+				228DD2EE276DB9E200BCA862 /* LoadDBModel.swift in Sources */,
 				2217A03B2763AD1300169B35 /* SigninViewController.swift in Sources */,
 				2226C78C2768A1D400BF1B1F /* MailSignupViewController.swift in Sources */,
 				2217A0432763AD5000169B35 /* NewListViewController.swift in Sources */,
@@ -275,6 +282,7 @@
 				2217A0412763AD4400169B35 /* ConfigurationViewController.swift in Sources */,
 				2217A0222763A98300169B35 /* AppDelegate.swift in Sources */,
 				2217A0242763A98300169B35 /* SceneDelegate.swift in Sources */,
+				228DD2EC276DB51B00BCA862 /* SendDBModel.swift in Sources */,
 				22D365912765ED1E007EA32B /* RealmModel.swift in Sources */,
 				2217A0372763ACD600169B35 /* MailsigninViewController.swift in Sources */,
 			);

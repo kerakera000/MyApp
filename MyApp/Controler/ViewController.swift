@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkUser()
+        print("temporaのメールチェックviewdidload")
     }
     func checkUser() {
         if Auth.auth().currentUser?.uid != nil{

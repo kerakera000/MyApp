@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
+    let checkmail = TemporaryRegistrationViewController()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -29,6 +31,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        print("sceneに来たよ")
+        let User = Auth.auth().currentUser?.isEmailVerified
+        print(User as Any)
+        if User == false {
+            Auth.auth().currentUser?.reload()
+        }
     }
 
     func sceneWillResignActive(_ scene: UIScene) {

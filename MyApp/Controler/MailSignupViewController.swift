@@ -17,6 +17,8 @@ class MailSignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var NameTextField: TextField!
     @IBOutlet weak var PasswordTextField: TextField!
     @IBOutlet weak var Button: UIButton!
+    
+    let check = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,7 @@ class MailSignupViewController: UIViewController, UITextFieldDelegate {
     
     //signup
     @IBAction private func didTapSignUpButton() {
+        
         let email = MailTextfield.text ?? ""
             let password = PasswordTextField.text ?? ""
             let name = NameTextField.text ?? ""
@@ -49,6 +52,12 @@ class MailSignupViewController: UIViewController, UITextFieldDelegate {
                                 guard let self = self else { return }
                                 if error == nil {
                                     // 仮登録完了画面へ遷移する処理
+                                    let sendDB = SendDBModel()
+                                    sendDB.Name = name
+                                    sendDB.email = email
+                                    sendDB.sendProfileDB()
+                                    let LoadDB = LoadDBModel()
+                                    LoadDB.realmset()
                                     self.performSegue(withIdentifier: "next", sender: nil)
                                 }
                                 self.showErrorIfNeeded(error)
@@ -61,8 +70,11 @@ class MailSignupViewController: UIViewController, UITextFieldDelegate {
             }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "next" {
-                let nextVC = segue.destination as! TemporaryRegistrationViewController
+        //UserDefaultsに値を登録
+        UserDefaults.standard.set(check, forKey: "bool")
+                                  
+        if segue.identifier == "next" {
+            let nextVC = segue.destination as! TemporaryRegistrationViewController
                 nextVC.Mail = MailTextfield.text!
                 nextVC.Name = NameTextField.text!
                 nextVC.Password = PasswordTextField.text!

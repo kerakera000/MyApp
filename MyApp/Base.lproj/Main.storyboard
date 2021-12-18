@@ -505,7 +505,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cL-Se-DZS">
-                                <rect key="frame" x="92" y="447" width="230" height="40"/>
+                                <rect key="frame" x="92" y="552" width="230" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0lX-ZD-mVp"/>
@@ -525,13 +525,36 @@
                                     <action selector="Retransmission:" destination="MSt-B4-vbq" eventType="touchUpInside" id="O6J-5x-nlf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyN-L4-LlW">
+                                <rect key="frame" x="92" y="452" width="230" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="Go0-VV-Osf" userLabel="width ≥ 200"/>
+                                    <constraint firstAttribute="height" constant="40" id="LsN-SC-2sm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="確認しました">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="Check:" destination="MSt-B4-vbq" eventType="touchUpInside" id="H6j-jn-hAl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bNE-TM-v8h"/>
                         <color key="backgroundColor" red="0.17647060749999999" green="0.17647060749999999" blue="0.17647060749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="EyN-L4-LlW" firstAttribute="centerX" secondItem="2Ts-rU-QRG" secondAttribute="centerX" id="U9v-cC-uVE"/>
                             <constraint firstItem="3AY-ZQ-TdD" firstAttribute="centerY" secondItem="2Ts-rU-QRG" secondAttribute="centerY" constant="-110" id="bAF-5h-QMa"/>
                             <constraint firstItem="2cL-Se-DZS" firstAttribute="centerX" secondItem="2Ts-rU-QRG" secondAttribute="centerX" id="f1X-7u-rHs"/>
-                            <constraint firstItem="2cL-Se-DZS" firstAttribute="top" secondItem="3AY-ZQ-TdD" secondAttribute="bottom" constant="95" id="r1M-IT-Fyk"/>
+                            <constraint firstItem="EyN-L4-LlW" firstAttribute="top" secondItem="3AY-ZQ-TdD" secondAttribute="bottom" constant="100" id="kYd-LQ-sIs"/>
+                            <constraint firstItem="2cL-Se-DZS" firstAttribute="top" secondItem="EyN-L4-LlW" secondAttribute="bottom" constant="60" id="rkH-BI-fS1"/>
                             <constraint firstItem="3AY-ZQ-TdD" firstAttribute="centerX" secondItem="2Ts-rU-QRG" secondAttribute="centerX" id="tup-WM-3ve"/>
                         </constraints>
                     </view>

@@ -11,7 +11,7 @@ import FirebaseAuth
 import RealmSwift
 import FirebaseFirestore
 
-class TemporaryRegistrationViewController: UIViewController {
+class TemporaryRegistrationViewController: UIViewController,UIWindowSceneDelegate {
     
     var Mail = ""
     var Name = ""
@@ -19,19 +19,38 @@ class TemporaryRegistrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("temporaのメールチェックviewdidload")
     }
     override func viewWillAppear(_ animated: Bool) {
-        if Auth.auth().currentUser?.uid != nil{
+        Auth.auth().currentUser?.reload()
+    }
+    @IBAction func Check(_ sender: Any) {
+        
+        Auth.auth().currentUser?.reload()
+        let User = Auth.auth().currentUser?.isEmailVerified
+        if User == false {
+            reloadUser()
+        }
+        print(User as Any)
+        
+        if User == true {
             //メイン画面遷移
             let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "Tabbar") as! UITabBarController
             tabBarController.selectedIndex = 0
             self.present(tabBarController, animated: true, completion: nil)
         }else{
-            print("ログインしてない")
+            print("ユーザーなし")
             //このまま
         }
     }
+    func reloadUser() {
+        let User = Auth.auth().currentUser?.isEmailVerified
+        print(User as Any)
+        if User == false {
+            Auth.auth().currentUser?.reload()
+        }
+    }
+    
     @IBAction func Retransmission(_ sender: Any) {
         let Mail = Mail
         let Name = Name
@@ -59,6 +78,7 @@ class TemporaryRegistrationViewController: UIViewController {
             self.showErrorIfNeeded(error)
         }
     }
+    
     private func showErrorIfNeeded(_ errorOrNil: Error?) {
         // エラーがなければ何もしません
         guard errorOrNil != nil else { return }
