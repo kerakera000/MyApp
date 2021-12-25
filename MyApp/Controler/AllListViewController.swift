@@ -12,10 +12,8 @@ class AllListViewController: UIViewController{
     @IBOutlet weak var tableview: UITableView!
     
     let realm = try! Realm()
-    let db = Firestore.firestore()
     var list: List<Memos>!
     var memomodel = [MemoModel]()
-    let uid = Auth.auth().currentUser?.uid
     let memos = Memos()
 
     override func viewDidLoad() {
@@ -77,7 +75,6 @@ class AllListViewController: UIViewController{
     @IBAction func checkbutton(_ sender: UIButton) {
         // UITableView内の座標に変換
         let point = self.tableview.convert(sender.center, from: sender)
-        let uid = (Auth.auth().currentUser?.uid)!
         // 座標からindexPathを取得
         if let indexPath = self.tableview.indexPathForRow(at: point) {
             
@@ -89,13 +86,7 @@ class AllListViewController: UIViewController{
             print("うんこ",filter as Any)
             //firestore内のBool値の情報を更新
             if datasets.capital == false {
-                db.collection("newuser").document(uid).collection("memo").document(ID).updateData(["capital": true]) { err in
-                        if let err = err {
-                            print("Error updating document: \(err)")
-                        } else {
-                            print("trueに更新")
-                        }
-                    }
+                
                 do{
                   try realm.write{
                       filter?.CheckBool = true
@@ -104,13 +95,7 @@ class AllListViewController: UIViewController{
                   print("Error \(error)")
                 }
             } else if datasets.capital == true{
-                db.collection("newuser").document(uid).collection("memo").document(ID).updateData(["capital": false]) { err in
-                        if let err = err {
-                            print("Error updating document: \(err)")
-                        } else {
-                            print("falseに更新")
-                        }
-                    }
+                
                 do{
                   try realm.write{
                       filter?.CheckBool = false
@@ -157,18 +142,10 @@ extension AllListViewController: UITableViewDelegate, UITableViewDataSource{
     //スワイプしたセルを削除
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        guard let uid = Auth.auth().currentUser?.uid else { return }
         let ID = memomodel[indexPath.row].postDateID
         
         if editingStyle == .delete {
-            //firebase消去
-            db.collection("newuser").document(uid).collection("memo").document(ID).delete(){ err in
-                if let err = err {
-                    print("Error removing document: \(err)")
-                } else {
-                    print("Document successfully removed!")
-                }
-            }
+            
             //realm消去
             try! realm.write {
                 let item = realm.objects(Memos.self).filter("PostDateID == %@", ID)

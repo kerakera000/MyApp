@@ -14,16 +14,12 @@
 		2217A0292763A98300169B35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2217A0272763A98300169B35 /* Main.storyboard */; };
 		2217A02B2763A98600169B35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2217A02A2763A98600169B35 /* Assets.xcassets */; };
 		2217A02E2763A98600169B35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2217A02C2763A98600169B35 /* LaunchScreen.storyboard */; };
-		2217A0372763ACD600169B35 /* MailsigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2217A0362763ACD600169B35 /* MailsigninViewController.swift */; };
-		2217A03B2763AD1300169B35 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2217A03A2763AD1300169B35 /* SigninViewController.swift */; };
 		2217A03D2763AD1E00169B35 /* AllListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2217A03C2763AD1E00169B35 /* AllListViewController.swift */; };
 		2217A03F2763AD2A00169B35 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2217A03E2763AD2A00169B35 /* CalenderViewController.swift */; };
 		2217A0412763AD4400169B35 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2217A0402763AD4400169B35 /* ConfigurationViewController.swift */; };
 		2217A0432763AD5000169B35 /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2217A0422763AD5000169B35 /* NewListViewController.swift */; };
 		2217A0452763AD5B00169B35 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2217A0442763AD5B00169B35 /* SearchViewController.swift */; };
 		2217A0472763AD6400169B35 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2217A0462763AD6400169B35 /* ListViewController.swift */; };
-		2226C78C2768A1D400BF1B1F /* MailSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226C78B2768A1D400BF1B1F /* MailSignupViewController.swift */; };
-		2226C78E2768E56D00BF1B1F /* TemporaryRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226C78D2768E56D00BF1B1F /* TemporaryRegistrationViewController.swift */; };
 		2278CA172767A974000873CB /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278CA162767A974000873CB /* TextField.swift */; };
 		228DD2F0276DEBA200BCA862 /* MemoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228DD2EF276DEBA200BCA862 /* MemoModel.swift */; };
 		228DD2F2277075CA00BCA862 /* GetDayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228DD2F1277075CA00BCA862 /* GetDayModel.swift */; };
@@ -43,16 +39,12 @@
 		2217A02A2763A98600169B35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2217A02D2763A98600169B35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2217A02F2763A98600169B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2217A0362763ACD600169B35 /* MailsigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailsigninViewController.swift; sourceTree = "<group>"; };
-		2217A03A2763AD1300169B35 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		2217A03C2763AD1E00169B35 /* AllListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListViewController.swift; sourceTree = "<group>"; };
 		2217A03E2763AD2A00169B35 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		2217A0402763AD4400169B35 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		2217A0422763AD5000169B35 /* NewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListViewController.swift; sourceTree = "<group>"; };
 		2217A0442763AD5B00169B35 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2217A0462763AD6400169B35 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		2226C78B2768A1D400BF1B1F /* MailSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailSignupViewController.swift; sourceTree = "<group>"; };
-		2226C78D2768E56D00BF1B1F /* TemporaryRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryRegistrationViewController.swift; sourceTree = "<group>"; };
 		2278CA162767A974000873CB /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		228DD2EF276DEBA200BCA862 /* MemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModel.swift; sourceTree = "<group>"; };
 		228DD2F1277075CA00BCA862 /* GetDayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDayModel.swift; sourceTree = "<group>"; };
@@ -110,17 +102,13 @@
 		2217A0352763AC8400169B35 /* Controler */ = {
 			isa = PBXGroup;
 			children = (
-				2217A0362763ACD600169B35 /* MailsigninViewController.swift */,
 				2217A0252763A98300169B35 /* ViewController.swift */,
-				2217A03A2763AD1300169B35 /* SigninViewController.swift */,
 				2217A03C2763AD1E00169B35 /* AllListViewController.swift */,
 				2217A03E2763AD2A00169B35 /* CalenderViewController.swift */,
 				2217A0402763AD4400169B35 /* ConfigurationViewController.swift */,
 				2217A0422763AD5000169B35 /* NewListViewController.swift */,
 				2217A0442763AD5B00169B35 /* SearchViewController.swift */,
 				2217A0462763AD6400169B35 /* ListViewController.swift */,
-				2226C78B2768A1D400BF1B1F /* MailSignupViewController.swift */,
-				2226C78D2768E56D00BF1B1F /* TemporaryRegistrationViewController.swift */,
 			);
 			path = Controler;
 			sourceTree = "<group>";
@@ -274,9 +262,6 @@
 				2217A0472763AD6400169B35 /* ListViewController.swift in Sources */,
 				2278CA172767A974000873CB /* TextField.swift in Sources */,
 				2217A0262763A98300169B35 /* ViewController.swift in Sources */,
-				2226C78E2768E56D00BF1B1F /* TemporaryRegistrationViewController.swift in Sources */,
-				2217A03B2763AD1300169B35 /* SigninViewController.swift in Sources */,
-				2226C78C2768A1D400BF1B1F /* MailSignupViewController.swift in Sources */,
 				2217A0432763AD5000169B35 /* NewListViewController.swift in Sources */,
 				2217A03D2763AD1E00169B35 /* AllListViewController.swift in Sources */,
 				2217A03F2763AD2A00169B35 /* CalenderViewController.swift in Sources */,
@@ -286,7 +271,6 @@
 				2217A0222763A98300169B35 /* AppDelegate.swift in Sources */,
 				2217A0242763A98300169B35 /* SceneDelegate.swift in Sources */,
 				22D365912765ED1E007EA32B /* RealmModel.swift in Sources */,
-				2217A0372763ACD600169B35 /* MailsigninViewController.swift in Sources */,
 				228DD2F6277077D200BCA862 /* CustomCell.swift in Sources */,
 				228DD2F0276DEBA200BCA862 /* MemoModel.swift in Sources */,
 			);

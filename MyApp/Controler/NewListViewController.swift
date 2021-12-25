@@ -6,13 +6,10 @@
 //
 
 import UIKit
-import FirebaseFirestore
-import Firebase
 import RealmSwift
 
 class NewListViewController: UIViewController {
     
-    let db = Firestore.firestore()
     let realm = try! Realm()
     var list: List<Memos>!
     var day = ""
@@ -30,17 +27,17 @@ class NewListViewController: UIViewController {
     func newmemoFirebase() {
         print("func")
         //uid取得
-        guard let uid = Auth.auth().currentUser?.uid else {return}
+//        guard let uid = Auth.auth().currentUser?.uid else {return}
         //1.作成日時を取得20211122 20:10まで取得する
         let memodate = Date().timeIntervalSince1970
         //2.作成日を文字列化
         let postDateID = String( memodate )
-        //保存箇所を作成
-        let memo = ["comments": textField.text!, "capital": false ,"postDateID": postDateID, "YearMount": day] as [String : Any]
-        //メモデータ保存用
-        let userRef = db.collection("newuser").document(uid).collection("memo").document(postDateID)
+//        //保存箇所を作成
+//        let memo = ["comments": textField.text!, "capital": false ,"postDateID": postDateID, "YearMount": day] as [String : Any]
+//        //メモデータ保存用
+//        let userRef = db.collection("newuser").document(uid).collection("memo").document(postDateID)
         
-        userRef.setData(memo)
+//        userRef.setData(memo)
         
         let item = Memos()
         
