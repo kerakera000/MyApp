@@ -13,6 +13,12 @@ import FirebaseFirestore
 
 class MailSignupViewController: UIViewController, UITextFieldDelegate {
     
+    let Uid = Auth.auth().currentUser?.uid
+    var realm = try! Realm()
+    var list: List<Memos>!
+    let db = Firestore.firestore()
+    let FBAuth = FirebaseAuth.Auth.auth()
+    
     @IBOutlet weak var MailTextfield: TextField!
     @IBOutlet weak var NameTextField: TextField!
     @IBOutlet weak var PasswordTextField: TextField!
@@ -52,12 +58,7 @@ class MailSignupViewController: UIViewController, UITextFieldDelegate {
                                 guard let self = self else { return }
                                 if error == nil {
                                     // 仮登録完了画面へ遷移する処理
-                                    let sendDB = SendDBModel()
-                                    sendDB.Name = name
-                                    sendDB.email = email
-                                    sendDB.sendProfileDB()
-                                    let LoadDB = LoadDBModel()
-                                    LoadDB.realmset()
+                                    sendProfileDB()
                                     self.performSegue(withIdentifier: "next", sender: nil)
                                 }
                                 self.showErrorIfNeeded(error)
@@ -68,6 +69,14 @@ class MailSignupViewController: UIViewController, UITextFieldDelegate {
                 }
                 self.showErrorIfNeeded(error)
             }
+        func sendProfileDB() {
+            guard let uid = FBAuth.currentUser?.uid else { return }
+            
+            let docData = ["email": email as Any, "name": name as Any] as [String : Any]
+            let userRef = Firestore.firestore().collection("newuser").document(uid)
+            
+            userRef.setData(docData)
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //UserDefaultsに値を登録

@@ -6,11 +6,7 @@
 //
 
 import UIKit
-import GoogleSignIn
-import Firebase
-import FirebaseAuth
 import RealmSwift
-import FirebaseFirestore
 
 class ViewController: UIViewController {
 
@@ -20,15 +16,14 @@ class ViewController: UIViewController {
         print("temporaのメールチェックviewdidload")
     }
     func checkUser() {
-        if Auth.auth().currentUser?.uid != nil{
-            performSegue(withIdentifier: "next", sender: nil)
-        }else{
-            print("ログインしてない")
-        }
-        
+//        if Auth.auth().currentUser?.uid != nil{
+//            performSegue(withIdentifier: "next", sender: nil)
+//        }else{
+//            print("ログインしてない")
+//        }
     }
     @IBAction func Gonext(_ sender: Any) {
-        performSegue(withIdentifier: "Next", sender: nil)
+        performSegue(withIdentifier: "next", sender: nil)
     }
     
 }

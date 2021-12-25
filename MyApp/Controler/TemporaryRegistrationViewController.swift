@@ -6,10 +6,7 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseAuth
 import RealmSwift
-import FirebaseFirestore
 
 class TemporaryRegistrationViewController: UIViewController,UIWindowSceneDelegate {
     
@@ -35,9 +32,7 @@ class TemporaryRegistrationViewController: UIViewController,UIWindowSceneDelegat
         
         if User == true {
             //メイン画面遷移
-            let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "Tabbar") as! UITabBarController
-            tabBarController.selectedIndex = 0
-            self.present(tabBarController, animated: true, completion: nil)
+            nextview()
         }else{
             print("ユーザーなし")
             //このまま
@@ -87,6 +82,10 @@ class TemporaryRegistrationViewController: UIViewController,UIWindowSceneDelegat
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    func nextview() {
+        performSegue(withIdentifier: "tabbar", sender: nil)
     }
     
 }

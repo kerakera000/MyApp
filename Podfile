@@ -8,15 +8,8 @@ inhibit_all_warnings!
 
   # Pods for MyApp
 pod 'PKHUD','~> 5.0'
-pod 'Firebase'
-pod 'Firebase/Firestore'
-pod 'Firebase/Auth'
-pod 'Firebase/Storage'
-pod 'Firebase/Core'
-pod 'Firebase/Analytics'
 pod 'FSCalendar'
 pod 'CalculateCalendarLogic'
-pod 'GoogleSignIn'
 pod 'IQKeyboardManagerSwift'
 pod 'RealmSwift'
 
