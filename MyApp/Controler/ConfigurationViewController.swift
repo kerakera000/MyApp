@@ -20,9 +20,9 @@ class ConfigurationViewController: UIViewController {
     @IBAction func logout(_ sender: Any) {
 //        print("ok logout")
 //        let firebaseAuth = Auth.auth()
-//        try! realm.write {
-//            realm.deleteAll()
-//        }
+        try! realm.write {
+            realm.deleteAll()
+        }
 //        do{
 //            try firebaseAuth.signOut()
 //            guard let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "firstview") else { return  } 
