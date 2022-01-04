@@ -13,6 +13,7 @@ class CustomCell: UITableViewCell {
     
     @IBOutlet weak var MemoLabel: UILabel!
     @IBOutlet weak var checkButton: CustomButton!
+    @IBOutlet weak var DayMemoLabel: UILabel!
     
     //継承クラスのメソッド(機能)を上書き
     override func awakeFromNib() {

@@ -18,8 +18,14 @@ class ListViewController: UIViewController {
     @IBOutlet weak var AlllistCount: UILabel!
     @IBOutlet weak var CheckListCount: UILabel!
     
+    
+    @IBOutlet weak var nowview: UIView!
+    @IBOutlet weak var allview: UIView!
+    @IBOutlet weak var checkview: UIView!
+    
     let realm = try! Realm()
     var moji:String = ""
+    var buttoncheckColor = ""
     var delegate:CatchProtocol?
     var list: List<Memos>!
     
@@ -40,6 +46,18 @@ class ListViewController: UIViewController {
         loaddata()
         Allloaddata()
         CheckLoadData()
+        print("文字出すよ")
+        print(buttoncheckColor)
+    
+        if buttoncheckColor == "今日"{
+            nowview.backgroundColor = UIColor(red: 149, green: 148, blue: 153, alpha: 1)
+        }
+        if buttoncheckColor == "全部"{
+            allview.backgroundColor = UIColor(red: 149, green: 148, blue: 153, alpha: 1)
+        }
+        if buttoncheckColor == "達成"{
+            checkview.backgroundColor = UIColor(red: 149, green: 148, blue: 153, alpha: 1)
+        }
     }
     
     @IBAction func nowDayList(_ sender: Any) {

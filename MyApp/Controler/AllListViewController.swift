@@ -39,7 +39,7 @@ class AllListViewController: UIViewController, CatchProtocol{
         loaddata()
         print("viewwill回しますー")
         print("checklist確認しますー", checklist)
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         if checklist == "今日"{
             loaddata()
@@ -136,6 +136,7 @@ class AllListViewController: UIViewController, CatchProtocol{
             CreateMemoViewController.day = colectionID
         }else if segue.identifier == "next" {
             let nextvc = segue.destination as! ListViewController
+            nextvc.buttoncheckColor = checklist
             nextvc.delegate = self
         }
     }
@@ -175,16 +176,20 @@ class AllListViewController: UIViewController, CatchProtocol{
             //ここには来ないはず
             print("indexPath not found.")
         }
-        loaddata()
+        if checklist == "今日"{
+            loaddata()
+        }
+        if checklist == "全部" {
+            Allloaddata()
+        }
+        if checklist == "達成"{
+            CheckLoadData()
+        }
     }
     
 }
 
 extension AllListViewController: UITableViewDelegate, UITableViewDataSource{
-    
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.memomodel.count
@@ -196,8 +201,10 @@ extension AllListViewController: UITableViewDelegate, UITableViewDataSource{
         
         let button = cell.checkButton
         let datasets = memomodel[indexPath.row]
+        let Daylabel = cell.DayMemoLabel
 
         button!.isCheck = datasets.capital
+        Daylabel?.text = datasets.YearMount
         
         cell.MemoLabel.numberOfLines = 0
         cell.MemoLabel?.text = datasets.Comments
@@ -228,12 +235,4 @@ extension AllListViewController: UITableViewDelegate, UITableViewDataSource{
         //tableviewの中身をリロード
         tableview.reloadData()
     }
-//    //tableviewのcellの並び替え
-//    func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-//        try! realm.write {
-//            let listItem = list[fromIndexPath.row]
-//            list.remove(at: fromIndexPath.row)
-//            list.insert(listItem, at: to.row)
-//        }
-//    }
 }

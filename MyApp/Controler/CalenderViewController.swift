@@ -40,15 +40,7 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         
         FSweekday()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        if dataday == ""{
-            loadData()
-        }else {
-            clickday()
-        }
-        
-        checkevent()
-    }
+    
     func FSweekday(){
         calenderView.calendarWeekdayView.weekdayLabels[0].text = "日"
         calenderView.calendarWeekdayView.weekdayLabels[1].text = "月"
@@ -68,31 +60,17 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         calenderView.calendarWeekdayView.weekdayLabels[5].textColor = UIColor.black
         calenderView.calendarWeekdayView.weekdayLabels[6].textColor = UIColor.blue
     }
-    func checkevent() {
-        print("loaddataだぜ")
-        var date = GetdayModel.getTodayDate(slash: true)
-        //2021/08/01
-        //年月と日に分ける
-        for _ in 0...1{
-            if let slash = date.range(of: "/"){
-                date.replaceSubrange(slash, with: "")
-                //2021/11/16 -> 20211116になる
-            }
-        }
-        //最初の六文字
-        let colectionID = date
-        dataday = colectionID
-
-        //tableview.isEditing.toggle()
-        let testfilter = realm.objects(Memos.self).filter("YearMount == %@", colectionID)
+    
+    override func viewWillAppear(_ animated: Bool) {
         
-        eventCheck = []
-        for memos in testfilter {
-            let memo = MemoModel(postDateID: memos.PostDateID!, Comments: memos.Comments!, capital: memos.CheckBool, YearMount: memos.YearMount!)
-            self.eventCheck.append(memo)
+        print(dataday)
+        if dataday == ""{
+            loadData()
+            calenderView.reloadData()
+        }else{
+            clickday()
+            calenderView.reloadData()
         }
-        // 取得件数の表示
-        print(eventCheck)
     }
     
     func clickday() {
@@ -270,7 +248,6 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         day = CreateDay
         dataday = ""
         dataday = CreateDay
-        print(dataday)
 
         memomodel = []
         for memos in list {
@@ -281,6 +258,35 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         }
         print(memomodel)
         self.Tableview.reloadData()
+    }
+    
+    // 任意の日付に点マークをつける
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        var hasEvent = false
+        var now = dateFormatter.string(from: date)
+        //forで/を消して年月、日で分ける
+        for _ in 0...1{
+            //varで取得したdateの中身のスラッシュの部分をfor文で消す...2個あるから2回まわる(2021/08/01)となる
+            if let slash = now.range(of: "/"){
+                now.replaceSubrange(slash, with: "")
+            }
+        }
+        //全部
+        let CreateDay = now
+
+        for dateStr in list{
+            if dateStr.YearMount == CreateDay {
+                print("点をつけるぜ！")
+                hasEvent = true
+            }
+        }
+        if hasEvent {
+            return 1
+        } else {
+            return 0
+        }
     }
 }
 

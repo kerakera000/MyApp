@@ -25,6 +25,7 @@
 		228DD2F2277075CA00BCA862 /* GetDayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228DD2F1277075CA00BCA862 /* GetDayModel.swift */; };
 		228DD2F6277077D200BCA862 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228DD2F5277077D200BCA862 /* CustomCell.swift */; };
 		228DD2F827707C3200BCA862 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228DD2F727707C3200BCA862 /* CustomButton.swift */; };
+		229E74E9278024FE005B4A37 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 229E74EB278024FE005B4A37 /* Localizable.strings */; };
 		22D365912765ED1E007EA32B /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D365902765ED1E007EA32B /* RealmModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,9 @@
 		228DD2F1277075CA00BCA862 /* GetDayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDayModel.swift; sourceTree = "<group>"; };
 		228DD2F5277077D200BCA862 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		228DD2F727707C3200BCA862 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		229E74E527802480005B4A37 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		229E74E627802481005B4A37 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		229E74EA278024FE005B4A37 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		22D365902765ED1E007EA32B /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		EC84E6739B1C3DEF5F1B7CFC /* Pods-MyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp.release.xcconfig"; path = "Target Support Files/Pods-MyApp/Pods-MyApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +73,7 @@
 		2217A0152763A98300169B35 = {
 			isa = PBXGroup;
 			children = (
+				229E74EB278024FE005B4A37 /* Localizable.strings */,
 				2217A0202763A98300169B35 /* MyApp */,
 				2217A01F2763A98300169B35 /* Products */,
 				B1AFF804EDD9D2774E2A9180 /* Pods */,
@@ -187,6 +192,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 2217A0152763A98300169B35;
 			productRefGroup = 2217A01F2763A98300169B35 /* Products */;
@@ -204,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2217A02E2763A98600169B35 /* LaunchScreen.storyboard in Resources */,
+				229E74E9278024FE005B4A37 /* Localizable.strings in Resources */,
 				2217A02B2763A98600169B35 /* Assets.xcassets in Resources */,
 				2217A0292763A98300169B35 /* Main.storyboard in Resources */,
 			);
@@ -283,6 +290,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2217A0282763A98300169B35 /* Base */,
+				229E74E527802480005B4A37 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -291,8 +299,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				2217A02D2763A98600169B35 /* Base */,
+				229E74E627802481005B4A37 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		229E74EB278024FE005B4A37 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				229E74EA278024FE005B4A37 /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -302,6 +319,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -363,6 +381,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -422,6 +441,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N3ZHS958DZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -450,6 +470,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N3ZHS958DZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

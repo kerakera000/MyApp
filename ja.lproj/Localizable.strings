@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  MyApp
+
+  Created by kerakera on 2022/01/01.
+  
+*/
+"start" = "はじめる";
+
+"Today's list" = "今日のリスト";
+"Full list" = "全部のリスト";
+"Achieved list" = "達成リスト";
+
+"calendar" = "カレンダー";
+"Configuration" = "設定";

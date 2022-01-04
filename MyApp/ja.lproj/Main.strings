@@ -1,0 +1,102 @@
+
+/* Class = "UILabel"; text = "0"; ObjectID = "5OP-zS-yHl"; */
+"5OP-zS-yHl.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9DN-DW-HVP"; */
+"9DN-DW-HVP.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "カレンダー"; ObjectID = "Cwa-lg-iWZ"; */
+"Cwa-lg-iWZ.title" = "カレンダー";
+
+/* Class = "UILabel"; text = "今日のリスト"; ObjectID = "DJ6-j1-irh"; */
+"DJ6-j1-irh.text" = "今日のリスト";
+
+/* Class = "UIButton"; configuration.title = "完了"; ObjectID = "ESp-RV-yCo"; */
+"ESp-RV-yCo.configuration.title" = "完了";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ESp-RV-yCo"; */
+"ESp-RV-yCo.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "ItT-l1-c4m"; */
+"ItT-l1-c4m.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "MHv-M7-c1p"; */
+"MHv-M7-c1p.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "達成のリスト"; ObjectID = "OgT-Zb-Nvv"; */
+"OgT-Zb-Nvv.configuration.title" = "達成のリスト";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "OgT-Zb-Nvv"; */
+"OgT-Zb-Nvv.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "設定"; ObjectID = "Qvx-nW-xhC"; */
+"Qvx-nW-xhC.text" = "設定";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "RLU-Nq-iIk"; */
+"RLU-Nq-iIk.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "ログアウト"; ObjectID = "S5A-jM-Jjq"; */
+"S5A-jM-Jjq.configuration.title" = "ログアウト";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "S5A-jM-Jjq"; */
+"S5A-jM-Jjq.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "リスト"; ObjectID = "SJ9-kf-6KZ"; */
+"SJ9-kf-6KZ.title" = "リスト";
+
+/* Class = "UIButton"; configuration.title = "今日のリスト"; ObjectID = "XPN-hk-HkM"; */
+"XPN-hk-HkM.configuration.title" = "今日のリスト";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "XPN-hk-HkM"; */
+"XPN-hk-HkM.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "ZZK-NE-fDu"; */
+"ZZK-NE-fDu.title" = "Item";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "buC-ss-ewv"; */
+"buC-ss-ewv.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eBE-B9-hvC"; */
+"eBE-B9-hvC.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gci-Rj-Ykl"; */
+"gci-Rj-Ykl.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ghx-wO-cOT"; */
+"ghx-wO-cOT.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hdv-2P-IbA"; */
+"hdv-2P-IbA.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "text"; ObjectID = "iIj-On-DET"; */
+"iIj-On-DET.placeholder" = "text";
+
+/* Class = "UIButton"; configuration.title = "全部のリスト"; ObjectID = "kVf-p0-IHd"; */
+"kVf-p0-IHd.configuration.title" = "全部のリスト";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "kVf-p0-IHd"; */
+"kVf-p0-IHd.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "はじめる"; ObjectID = "mwi-iC-gYi"; */
+"mwi-iC-gYi.configuration.title" = "はじめる";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "mwi-iC-gYi"; */
+"mwi-iC-gYi.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "2021年11月7日"; ObjectID = "oG7-Fj-weG"; */
+"oG7-Fj-weG.text" = "2021年11月7日";
+
+/* Class = "UILabel"; text = "20200122"; ObjectID = "r38-td-kPP"; */
+"r38-td-kPP.text" = "20200122";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ukN-fU-p7a"; */
+"ukN-fU-p7a.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "wcM-2z-O88"; */
+"wcM-2z-O88.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "カレンダー"; ObjectID = "xBy-bd-dCc"; */
+"xBy-bd-dCc.title" = "カレンダー";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "zlt-mM-cJw"; */
+"zlt-mM-cJw.normalTitle" = "Button";
