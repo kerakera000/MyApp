@@ -15,12 +15,12 @@ class NewListViewController: UIViewController {
     var day = ""
 
     @IBOutlet weak var textField: UITextView!
-    @IBOutlet weak var createlist: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         list = realm.objects(Itemlist.self).first?.list
+        
     }
     @IBAction func backlist(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

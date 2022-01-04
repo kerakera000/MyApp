@@ -192,7 +192,7 @@ class AllListViewController: UIViewController, CatchProtocol{
 extension AllListViewController: UITableViewDelegate, UITableViewDataSource{
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.memomodel.count
+        return memomodel.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
