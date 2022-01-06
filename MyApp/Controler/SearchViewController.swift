@@ -46,11 +46,56 @@ class SearchViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func search(_ sender: Any) {
+         serchlist()
+    }
+    @IBAction func checkBoolButton(_ sender: UIButton) {
+        // UITableView内の座標に変換
+        let point = self.tableview.convert(sender.center, from: sender)
+        // 座標からindexPathを取得
+        if let indexPath = self.tableview.indexPathForRow(at: point) {
+            
+            let datasets = filterArray[indexPath.row]
+            let ID = filterArray[indexPath.row].postDateID
+            
+            let filter = realm.objects(Memos.self).filter("PostDateID == %@", ID).first
+            
+            print("うんこ",filter as Any)
+            //firestore内のBool値の情報を更新
+            if datasets.capital == false {
+                
+                do{
+                  try realm.write{
+                      filter?.CheckBool = true
+                      print(filter as Any)
+                  }
+                }catch {
+                  print("Error \(error)")
+                }
+            } else if datasets.capital == true{
+                
+                do{
+                  try realm.write{
+                      filter?.CheckBool = false
+                  }
+                }catch {
+                  print("Error \(error)")
+                }
+                }
+        } else {
+            //ここには来ないはず
+            print("indexPath not found.")
+        }
+        Allloaddata()
+        serchlist()
+    }
+    func serchlist() {
         filterArray = []
         
         if textField.text == "" {
+            print("戻る")
             return
         }else {
+            print("serch回す")
             let filterString = textField.text!
             
             let search = memomodel.filter{ (comment) in
@@ -91,8 +136,28 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
         cell.MemoLabel?.text = datasets.Comments
         return cell
     }
-    
-    
+    //cell選択時
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //セルの選択解除
+        tableview.deselectRow(at: indexPath, animated: true)
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let ID = filterArray[indexPath.row].postDateID
+        
+        if editingStyle == .delete {
+            
+            //realm消去
+            try! realm.write {
+                let item = realm.objects(Memos.self).filter("PostDateID == %@", ID)
+                realm.delete(item)
+            }
+            filterArray.remove(at: indexPath.row)
+            tableview.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+        }
+        //tableviewの中身をリロード
+        tableview.reloadData()
+    }
     
     
 }
