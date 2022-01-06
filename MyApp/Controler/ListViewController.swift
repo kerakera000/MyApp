@@ -50,13 +50,21 @@ class ListViewController: UIViewController {
         print(buttoncheckColor)
     
         if buttoncheckColor == "今日"{
-            nowview.backgroundColor = UIColor(red: 149, green: 148, blue: 153, alpha: 1)
+            print("選択、灰色")
+            self.nowview.backgroundColor = UIColor.lightGray
+        }else{
+            print("白")
+            self.nowview.backgroundColor = UIColor.white
         }
         if buttoncheckColor == "全部"{
-            allview.backgroundColor = UIColor(red: 149, green: 148, blue: 153, alpha: 1)
+            allview.backgroundColor = UIColor.lightGray
+        }else{
+            allview.backgroundColor = UIColor.white
         }
         if buttoncheckColor == "達成"{
-            checkview.backgroundColor = UIColor(red: 149, green: 148, blue: 153, alpha: 1)
+            checkview.backgroundColor = UIColor.lightGray
+        }else{
+            checkview.backgroundColor = UIColor.white
         }
     }
     
